@@ -1,88 +1,44 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="styles.css">  <!-- Link to your CSS file -->
+</head>
+<body>
+    <div class="calculator">
+        <!-- Display area -->
+        <input type="text" id="display" disabled> 
+        
+        <!-- Button Grid -->
+        <div class="buttons">
+            <!-- Clear Button -->
+            <button class="button clear" onclick="clearDisplay()">C</button>
+            <button class="button operator" onclick="appendOperator('+')">+</button>
+            <button class="button operator" onclick="appendOperator('-')">-</button>
+            <button class="button operator" onclick="appendOperator('÷')">÷</button>
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #bdbdbdb6;
-    font-family: 'Arial', sans-serif;
-}
+            <button class="button" onclick="appendNumber(7)">7</button>
+            <button class="button" onclick="appendNumber(8)">8</button>
+            <button class="button" onclick="appendNumber(9)">9</button>
+            <button class="button operator" onclick="appendOperator('*')">*</button>
 
-.calculator {
-    width: 300px;
-    border-radius: 10px;
-    background-color: #333;
-    padding: 20px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-}
+            <button class="button" onclick="appendNumber(4)">4</button>
+            <button class="button" onclick="appendNumber(5)">5</button>
+            <button class="button" onclick="appendNumber(6)">6</button>
+            <button class="button equals" onclick="calculate()">=</button>
 
-#display {
-    width: 100%;
-    height: 50px;
-    font-size: 32px;
-    font-weight: bold;
-    text-align: right;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #222;
-    color: rgb(129, 127, 127);
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-}
+            <button class="button" onclick="appendNumber(1)">1</button>
+            <button class="button" onclick="appendNumber(2)">2</button>
+            <button class="button" onclick="appendNumber(3)">3</button>
+            <button class="button operator" onclick="appendOperator('/')">/</button>
 
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
+            <button class="button" onclick="appendNumber(0)">0</button>
+            <button class="button" onclick="appendOperator('.')">.</button>
+        </div>
+    </div>
 
-.button {
-    background-color: #444;
-    border: 1px solid #666;
-    padding: 20px;
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: background-color 0.3s, transform 0.1s;
-}
-
-.button:hover {
-    background-color: #555;
-}
-
-.button:active {
-    background-color: #666;
-    transform: scale(0.98);
-}
-
-.button.operator {
-    background-color: #f39c12;
-}
-
-.button.operator:hover {
-    background-color: #e67e22;
-}
-
-.button.clear {
-    background-color: #f39c12;
-}
-
-.button.clear:hover {
-    background-color: #e67e22;
-}
-
-.button.equals {
-    background-color: #f39c12;
-}
-
-.button.equals:hover {
-    background-color: #e67e22;
-}
+    <script src="script.js"></script>  <!-- Link to your JS file -->
+</body>
+</html>
